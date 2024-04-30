@@ -1,0 +1,56 @@
+Questo e` un file di testo che verra` usato per ideare la struttura del progetto
+
+Voglio creare un applicazione client-server
+I clientdevono poter contattare il server su qualsiasi interfaccia di rete 
+Il server riceve comandi , non ho ben presente quali comandi ma un primo comando sara
+quello di salutare il server che rispondera a sua volta
+
+dobbiamo avere una cartella src e una cartella include
+
+Abbiamo due oggetti-->server e client
+
+che avranno dei metodi per inviare comandi 
+
+avremo dunque due sotto cartelle dentro src, cartella client e cartella server
+
+ci sara` un main sia per client che per server.
+
+Il server deve avviare una socket e metterla in listen
+
+dopo di che devve accettare le richieste di connessione e servire i client 
+
+ogni client viene servito da un thread dedicato
+
+
+
+metodi server:
+
+setup() crea socket e la  mette in listen su tutte le interfacce di rete
+run() accetta connessioni e interagisce con i client
+
+
+anche il client deve avere i metodi run e setup ma devono fare  cose molto diverse
+
+Creo un interfaccia SocketManager che contiene le definizioni generiche dei metodi run e setup dentro un file .hpp
+
+
+il setup del client deve ricevere l'ip del server da contattare
+
+devo definire lo scopo di questo  progetto server-client
+voglio che i client possano dare comando da far eseguire al terminale nel server
+il server manda l'output del comando al client
+
+l'oggetto che esegue i comandi e ritorna l'output lo usa solo il server
+la chiamo classe CommandManager
+
+che ha i metodi:
+executeCommand()
+getOutputCommand()
+
+
+
+il server riceve client ma voglio memorizzarli in una lista
+
+
+per il futuro creare classe Socket
+
