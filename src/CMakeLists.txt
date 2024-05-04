@@ -1,3 +1,4 @@
-# Moduli dalla cartella src
-add_subdirectory(src/server)
-add_subdirectory(src/socket)
+# Aggiungi tutti i sottoprogetti
+#add_subdirectory(client)
+add_subdirectory(server)
+add_subdirectory(socket)

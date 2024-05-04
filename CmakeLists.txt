@@ -1,29 +1,14 @@
-cmake_minimum_required(VERSION 3.0)
-project(MyProject)
+cmake_minimum_required(VERSION 3.10)
+project(Server-Client-OOP)
 
 # Specifica lo standard c++11
 set(CMAKE_CXX_STANDARD 11)
 
-# Specifica i file .cpp del progetto
-file(GLOB SERVER_SRC src/server/*.cpp)
-file(GLOB SOCKET_SRC src/socket/*.cpp)
+# Aggiungi le sottocartelle del progetto
+add_subdirectory(src)
 
-list(APPEND SOURCES ${SERVER_SRC})
-list(APPEND SOURCES ${SOCKET_SRC})
+# Definisci il target principale
+add_executable(Server-Client-OOP src/server/main.cpp)
 
-
-# Specifica i file .hpp del progetto
-file(GLOB SERVER_INC include/server/*.hpp)
-file(GLOB SOCKET_INC include/socket/*.hpp)
-file(GLOB INTERFACE_INC include/interface/*.hpp)
-
-list(APPEND HEADERS ${SERVER_INC})
-list(APPEND HEADERS ${SOCKET_INC})
-list(APPEND HEADERS ${INTERFACE_INC})
-
-
-# Specifica l'eseguibile da creare e i file sorgente necessari
-add_executable(MyExecutable ${SOURCES} ${HEADERS})
-
-target_include_directories(MyExecutable PRIVATE include/server include/socket include/interface)
-
+# Collega tutte le librerie al progetto principale
+target_link_libraries(Server-Client-OOP PRIVATE Server Socket)

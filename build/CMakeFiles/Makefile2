@@ -54,51 +54,199 @@ RM = /opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/simonearcari/Desktop/project
+CMAKE_SOURCE_DIR = /Users/simonearcari/Documents/GitHub/server-client-OOP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/simonearcari/Desktop/project/build
+CMAKE_BINARY_DIR = /Users/simonearcari/Documents/GitHub/server-client-OOP/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/MyExecutable.dir/all
+all: CMakeFiles/Server-Client-OOP.dir/all
+all: src/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: src/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/MyExecutable.dir/clean
+clean: CMakeFiles/Server-Client-OOP.dir/clean
+clean: src/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MyExecutable.dir
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/server/all
+src/all: src/socket/all
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall: src/server/preinstall
+src/preinstall: src/socket/preinstall
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/server/clean
+src/clean: src/socket/clean
+.PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory src/server
+
+# Recursive "all" directory target.
+src/server/all: src/server/CMakeFiles/Server.dir/all
+src/server/all: src/server/socket/all
+.PHONY : src/server/all
+
+# Recursive "preinstall" directory target.
+src/server/preinstall: src/server/socket/preinstall
+.PHONY : src/server/preinstall
+
+# Recursive "clean" directory target.
+src/server/clean: src/server/CMakeFiles/Server.dir/clean
+src/server/clean: src/server/socket/clean
+.PHONY : src/server/clean
+
+#=============================================================================
+# Directory level rules for directory src/server/socket
+
+# Recursive "all" directory target.
+src/server/socket/all: src/server/socket/CMakeFiles/ServerSocket.dir/all
+.PHONY : src/server/socket/all
+
+# Recursive "preinstall" directory target.
+src/server/socket/preinstall:
+.PHONY : src/server/socket/preinstall
+
+# Recursive "clean" directory target.
+src/server/socket/clean: src/server/socket/CMakeFiles/ServerSocket.dir/clean
+.PHONY : src/server/socket/clean
+
+#=============================================================================
+# Directory level rules for directory src/socket
+
+# Recursive "all" directory target.
+src/socket/all: src/socket/CMakeFiles/Socket.dir/all
+.PHONY : src/socket/all
+
+# Recursive "preinstall" directory target.
+src/socket/preinstall:
+.PHONY : src/socket/preinstall
+
+# Recursive "clean" directory target.
+src/socket/clean: src/socket/CMakeFiles/Socket.dir/clean
+.PHONY : src/socket/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Server-Client-OOP.dir
 
 # All Build rule for target.
-CMakeFiles/MyExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/simonearcari/Desktop/project/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target MyExecutable"
-.PHONY : CMakeFiles/MyExecutable.dir/all
+CMakeFiles/Server-Client-OOP.dir/all: src/server/CMakeFiles/Server.dir/all
+CMakeFiles/Server-Client-OOP.dir/all: src/server/socket/CMakeFiles/ServerSocket.dir/all
+CMakeFiles/Server-Client-OOP.dir/all: src/socket/CMakeFiles/Socket.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles --progress-num=5,6 "Built target Server-Client-OOP"
+.PHONY : CMakeFiles/Server-Client-OOP.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MyExecutable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Desktop/project/build/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MyExecutable.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Desktop/project/build/CMakeFiles 0
-.PHONY : CMakeFiles/MyExecutable.dir/rule
+CMakeFiles/Server-Client-OOP.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Server-Client-OOP.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 0
+.PHONY : CMakeFiles/Server-Client-OOP.dir/rule
 
 # Convenience name for target.
-MyExecutable: CMakeFiles/MyExecutable.dir/rule
-.PHONY : MyExecutable
+Server-Client-OOP: CMakeFiles/Server-Client-OOP.dir/rule
+.PHONY : Server-Client-OOP
 
 # clean rule for target.
-CMakeFiles/MyExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/clean
-.PHONY : CMakeFiles/MyExecutable.dir/clean
+CMakeFiles/Server-Client-OOP.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/clean
+.PHONY : CMakeFiles/Server-Client-OOP.dir/clean
+
+#=============================================================================
+# Target rules for target src/server/CMakeFiles/Server.dir
+
+# All Build rule for target.
+src/server/CMakeFiles/Server.dir/all: src/server/socket/CMakeFiles/ServerSocket.dir/all
+src/server/CMakeFiles/Server.dir/all: src/socket/CMakeFiles/Socket.dir/all
+	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/Server.dir/build.make src/server/CMakeFiles/Server.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/Server.dir/build.make src/server/CMakeFiles/Server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles --progress-num=1,2,3,4 "Built target Server"
+.PHONY : src/server/CMakeFiles/Server.dir/all
+
+# Build rule for subdir invocation for target.
+src/server/CMakeFiles/Server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/server/CMakeFiles/Server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 0
+.PHONY : src/server/CMakeFiles/Server.dir/rule
+
+# Convenience name for target.
+Server: src/server/CMakeFiles/Server.dir/rule
+.PHONY : Server
+
+# clean rule for target.
+src/server/CMakeFiles/Server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/Server.dir/build.make src/server/CMakeFiles/Server.dir/clean
+.PHONY : src/server/CMakeFiles/Server.dir/clean
+
+#=============================================================================
+# Target rules for target src/server/socket/CMakeFiles/ServerSocket.dir
+
+# All Build rule for target.
+src/server/socket/CMakeFiles/ServerSocket.dir/all: src/socket/CMakeFiles/Socket.dir/all
+	$(MAKE) $(MAKESILENT) -f src/server/socket/CMakeFiles/ServerSocket.dir/build.make src/server/socket/CMakeFiles/ServerSocket.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/server/socket/CMakeFiles/ServerSocket.dir/build.make src/server/socket/CMakeFiles/ServerSocket.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles --progress-num=7,8,9 "Built target ServerSocket"
+.PHONY : src/server/socket/CMakeFiles/ServerSocket.dir/all
+
+# Build rule for subdir invocation for target.
+src/server/socket/CMakeFiles/ServerSocket.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/server/socket/CMakeFiles/ServerSocket.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 0
+.PHONY : src/server/socket/CMakeFiles/ServerSocket.dir/rule
+
+# Convenience name for target.
+ServerSocket: src/server/socket/CMakeFiles/ServerSocket.dir/rule
+.PHONY : ServerSocket
+
+# clean rule for target.
+src/server/socket/CMakeFiles/ServerSocket.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/server/socket/CMakeFiles/ServerSocket.dir/build.make src/server/socket/CMakeFiles/ServerSocket.dir/clean
+.PHONY : src/server/socket/CMakeFiles/ServerSocket.dir/clean
+
+#=============================================================================
+# Target rules for target src/socket/CMakeFiles/Socket.dir
+
+# All Build rule for target.
+src/socket/CMakeFiles/Socket.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/socket/CMakeFiles/Socket.dir/build.make src/socket/CMakeFiles/Socket.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/socket/CMakeFiles/Socket.dir/build.make src/socket/CMakeFiles/Socket.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles --progress-num=10,11 "Built target Socket"
+.PHONY : src/socket/CMakeFiles/Socket.dir/all
+
+# Build rule for subdir invocation for target.
+src/socket/CMakeFiles/Socket.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/socket/CMakeFiles/Socket.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 0
+.PHONY : src/socket/CMakeFiles/Socket.dir/rule
+
+# Convenience name for target.
+Socket: src/socket/CMakeFiles/Socket.dir/rule
+.PHONY : Socket
+
+# clean rule for target.
+src/socket/CMakeFiles/Socket.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/socket/CMakeFiles/Socket.dir/build.make src/socket/CMakeFiles/Socket.dir/clean
+.PHONY : src/socket/CMakeFiles/Socket.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

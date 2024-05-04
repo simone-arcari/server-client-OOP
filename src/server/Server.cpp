@@ -6,10 +6,15 @@
 #include <netinet/in.h>
 #include <thread>
 #include "Server.hpp"
+#include "ServerSocketForClient.hpp"
 #include "ClientManagerThread.hpp"
 
 Server::Server() {
     // Implementazione del costruttore
+}
+
+Server::Server(int port) {
+    this->setServerPort(port);
 }
 
 Server::~Server() {
@@ -17,11 +22,11 @@ Server::~Server() {
 }
 
 bool Server::setup() {
-
-    this->socket = Socket(this->serverPort, htonl(INADDR_ANY)); // INADDR_ANY == tutte le interfacce di rete
+    int serverPort = this->getServerPort();
+    this->socket = ServerSocket(serverPort, htonl(INADDR_ANY)); // INADDR_ANY == tutte le interfacce di rete
 
     // Crea la socket principale del Server
-    if(this->socket.create()) {
+    if(this->socket.createSocket()) {
         std::cerr << "Errore metodo create()" << std::endl;
         return true;
     } 
@@ -39,15 +44,14 @@ bool Server::setup() {
 void Server::run() {
     // Accettazione e gestione di più client utilizzando i thread
     while (true) {
-        ClientSocket& clientSocketPtr = this->socket.acceptConnection();
-        if(clientSocketPtr.getErrStatus()) {
+        ServerSocketForClient& clientSocketPtr = this->socket.acceptConnection();
+        if(clientSocketPtr.getAcceptErrStatus()) {
             std::cerr << "Errore nell'accettare la connessione" << std::endl;
-            clientSocketPtr.setErrStatus(false);
             continue;
         }
 
         // Ottieni l'indirizzo IP del client
-        std::string clientIP = clientSocketPtr.getIP();
+        std::string clientIP = clientSocketPtr.getClientIP();
         std::cout << "Connessione accettata  | client ip : " << clientIP << std::endl;
 
         // Creazione di un thread per gestire il client

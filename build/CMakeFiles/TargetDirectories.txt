@@ -1,3 +1,14 @@
-/Users/simonearcari/Desktop/project/build/CMakeFiles/MyExecutable.dir
-/Users/simonearcari/Desktop/project/build/CMakeFiles/edit_cache.dir
-/Users/simonearcari/Desktop/project/build/CMakeFiles/rebuild_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles/Server-Client-OOP.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles/edit_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles/rebuild_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/CMakeFiles/edit_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/CMakeFiles/rebuild_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/server/CMakeFiles/Server.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/server/CMakeFiles/edit_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/server/CMakeFiles/rebuild_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/server/socket/CMakeFiles/ServerSocket.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/server/socket/CMakeFiles/edit_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/server/socket/CMakeFiles/rebuild_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/socket/CMakeFiles/Socket.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/socket/CMakeFiles/edit_cache.dir
+/Users/simonearcari/Documents/GitHub/server-client-OOP/build/src/socket/CMakeFiles/rebuild_cache.dir

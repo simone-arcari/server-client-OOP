@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/simonearcari/Desktop/project
+CMAKE_SOURCE_DIR = /Users/simonearcari/Documents/GitHub/server-client-OOP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/simonearcari/Desktop/project/build
+CMAKE_BINARY_DIR = /Users/simonearcari/Documents/GitHub/server-client-OOP/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Desktop/project/build/CMakeFiles /Users/simonearcari/Desktop/project/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles /Users/simonearcari/Documents/GitHub/server-client-OOP/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Desktop/project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/simonearcari/Documents/GitHub/server-client-OOP/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,96 +117,63 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MyExecutable
+# Target rules for targets named Server-Client-OOP
 
 # Build rule for target.
-MyExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyExecutable
-.PHONY : MyExecutable
+Server-Client-OOP: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server-Client-OOP
+.PHONY : Server-Client-OOP
 
 # fast build rule for target.
-MyExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/build
-.PHONY : MyExecutable/fast
+Server-Client-OOP/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/build
+.PHONY : Server-Client-OOP/fast
 
-src/server/ClientManagerThread.o: src/server/ClientManagerThread.cpp.o
-.PHONY : src/server/ClientManagerThread.o
+#=============================================================================
+# Target rules for targets named Server
 
-# target to build an object file
-src/server/ClientManagerThread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/ClientManagerThread.cpp.o
-.PHONY : src/server/ClientManagerThread.cpp.o
+# Build rule for target.
+Server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server
+.PHONY : Server
 
-src/server/ClientManagerThread.i: src/server/ClientManagerThread.cpp.i
-.PHONY : src/server/ClientManagerThread.i
+# fast build rule for target.
+Server/fast:
+	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/Server.dir/build.make src/server/CMakeFiles/Server.dir/build
+.PHONY : Server/fast
 
-# target to preprocess a source file
-src/server/ClientManagerThread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/ClientManagerThread.cpp.i
-.PHONY : src/server/ClientManagerThread.cpp.i
+#=============================================================================
+# Target rules for targets named ServerSocket
 
-src/server/ClientManagerThread.s: src/server/ClientManagerThread.cpp.s
-.PHONY : src/server/ClientManagerThread.s
+# Build rule for target.
+ServerSocket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ServerSocket
+.PHONY : ServerSocket
 
-# target to generate assembly for a file
-src/server/ClientManagerThread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/ClientManagerThread.cpp.s
-.PHONY : src/server/ClientManagerThread.cpp.s
+# fast build rule for target.
+ServerSocket/fast:
+	$(MAKE) $(MAKESILENT) -f src/server/socket/CMakeFiles/ServerSocket.dir/build.make src/server/socket/CMakeFiles/ServerSocket.dir/build
+.PHONY : ServerSocket/fast
 
-src/server/CommandManager.o: src/server/CommandManager.cpp.o
-.PHONY : src/server/CommandManager.o
+#=============================================================================
+# Target rules for targets named Socket
 
-# target to build an object file
-src/server/CommandManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/CommandManager.cpp.o
-.PHONY : src/server/CommandManager.cpp.o
+# Build rule for target.
+Socket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Socket
+.PHONY : Socket
 
-src/server/CommandManager.i: src/server/CommandManager.cpp.i
-.PHONY : src/server/CommandManager.i
-
-# target to preprocess a source file
-src/server/CommandManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/CommandManager.cpp.i
-.PHONY : src/server/CommandManager.cpp.i
-
-src/server/CommandManager.s: src/server/CommandManager.cpp.s
-.PHONY : src/server/CommandManager.s
-
-# target to generate assembly for a file
-src/server/CommandManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/CommandManager.cpp.s
-.PHONY : src/server/CommandManager.cpp.s
-
-src/server/Server.o: src/server/Server.cpp.o
-.PHONY : src/server/Server.o
-
-# target to build an object file
-src/server/Server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/Server.cpp.o
-.PHONY : src/server/Server.cpp.o
-
-src/server/Server.i: src/server/Server.cpp.i
-.PHONY : src/server/Server.i
-
-# target to preprocess a source file
-src/server/Server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/Server.cpp.i
-.PHONY : src/server/Server.cpp.i
-
-src/server/Server.s: src/server/Server.cpp.s
-.PHONY : src/server/Server.s
-
-# target to generate assembly for a file
-src/server/Server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/Server.cpp.s
-.PHONY : src/server/Server.cpp.s
+# fast build rule for target.
+Socket/fast:
+	$(MAKE) $(MAKESILENT) -f src/socket/CMakeFiles/Socket.dir/build.make src/socket/CMakeFiles/Socket.dir/build
+.PHONY : Socket/fast
 
 src/server/main.o: src/server/main.cpp.o
 .PHONY : src/server/main.o
 
 # target to build an object file
 src/server/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/src/server/main.cpp.o
 .PHONY : src/server/main.cpp.o
 
 src/server/main.i: src/server/main.cpp.i
@@ -214,7 +181,7 @@ src/server/main.i: src/server/main.cpp.i
 
 # target to preprocess a source file
 src/server/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/src/server/main.cpp.i
 .PHONY : src/server/main.cpp.i
 
 src/server/main.s: src/server/main.cpp.s
@@ -222,56 +189,8 @@ src/server/main.s: src/server/main.cpp.s
 
 # target to generate assembly for a file
 src/server/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/server/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server-Client-OOP.dir/build.make CMakeFiles/Server-Client-OOP.dir/src/server/main.cpp.s
 .PHONY : src/server/main.cpp.s
-
-src/socket/ClientSocket.o: src/socket/ClientSocket.cpp.o
-.PHONY : src/socket/ClientSocket.o
-
-# target to build an object file
-src/socket/ClientSocket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/socket/ClientSocket.cpp.o
-.PHONY : src/socket/ClientSocket.cpp.o
-
-src/socket/ClientSocket.i: src/socket/ClientSocket.cpp.i
-.PHONY : src/socket/ClientSocket.i
-
-# target to preprocess a source file
-src/socket/ClientSocket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/socket/ClientSocket.cpp.i
-.PHONY : src/socket/ClientSocket.cpp.i
-
-src/socket/ClientSocket.s: src/socket/ClientSocket.cpp.s
-.PHONY : src/socket/ClientSocket.s
-
-# target to generate assembly for a file
-src/socket/ClientSocket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/socket/ClientSocket.cpp.s
-.PHONY : src/socket/ClientSocket.cpp.s
-
-src/socket/Socket.o: src/socket/Socket.cpp.o
-.PHONY : src/socket/Socket.o
-
-# target to build an object file
-src/socket/Socket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/socket/Socket.cpp.o
-.PHONY : src/socket/Socket.cpp.o
-
-src/socket/Socket.i: src/socket/Socket.cpp.i
-.PHONY : src/socket/Socket.i
-
-# target to preprocess a source file
-src/socket/Socket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/socket/Socket.cpp.i
-.PHONY : src/socket/Socket.cpp.i
-
-src/socket/Socket.s: src/socket/Socket.cpp.s
-.PHONY : src/socket/Socket.s
-
-# target to generate assembly for a file
-src/socket/Socket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyExecutable.dir/build.make CMakeFiles/MyExecutable.dir/src/socket/Socket.cpp.s
-.PHONY : src/socket/Socket.cpp.s
 
 # Help Target
 help:
@@ -281,25 +200,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MyExecutable"
-	@echo "... src/server/ClientManagerThread.o"
-	@echo "... src/server/ClientManagerThread.i"
-	@echo "... src/server/ClientManagerThread.s"
-	@echo "... src/server/CommandManager.o"
-	@echo "... src/server/CommandManager.i"
-	@echo "... src/server/CommandManager.s"
-	@echo "... src/server/Server.o"
-	@echo "... src/server/Server.i"
-	@echo "... src/server/Server.s"
+	@echo "... Server"
+	@echo "... Server-Client-OOP"
+	@echo "... ServerSocket"
+	@echo "... Socket"
 	@echo "... src/server/main.o"
 	@echo "... src/server/main.i"
 	@echo "... src/server/main.s"
-	@echo "... src/socket/ClientSocket.o"
-	@echo "... src/socket/ClientSocket.i"
-	@echo "... src/socket/ClientSocket.s"
-	@echo "... src/socket/Socket.o"
-	@echo "... src/socket/Socket.i"
-	@echo "... src/socket/Socket.s"
 .PHONY : help
 
 

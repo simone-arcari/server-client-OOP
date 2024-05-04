@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libServerSocket.a CMakeFiles/ServerSocket.dir/ServerSocket.cpp.o CMakeFiles/ServerSocket.dir/ServerSocketForClient.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libServerSocket.a

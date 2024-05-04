@@ -7,10 +7,14 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/Users/simonearcari/Desktop/project/CMakeLists.txt"
+  "/Users/simonearcari/Documents/GitHub/server-client-OOP/CMakeLists.txt"
   "CMakeFiles/3.29.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeSystem.cmake"
+  "/Users/simonearcari/Documents/GitHub/server-client-OOP/src/CMakeLists.txt"
+  "/Users/simonearcari/Documents/GitHub/server-client-OOP/src/server/CMakeLists.txt"
+  "/Users/simonearcari/Documents/GitHub/server-client-OOP/src/server/socket/CMakeLists.txt"
+  "/Users/simonearcari/Documents/GitHub/server-client-OOP/src/socket/CMakeLists.txt"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
@@ -43,9 +47,16 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/server/socket/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/socket/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/MyExecutable.dir/DependInfo.cmake"
+  "CMakeFiles/Server-Client-OOP.dir/DependInfo.cmake"
+  "src/server/CMakeFiles/Server.dir/DependInfo.cmake"
+  "src/server/socket/CMakeFiles/ServerSocket.dir/DependInfo.cmake"
+  "src/socket/CMakeFiles/Socket.dir/DependInfo.cmake"
   )

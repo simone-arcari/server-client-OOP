@@ -1,15 +1,15 @@
 #pragma once
 
-#include "ClientSocket.hpp"
+#include "ServerSocketForClient.hpp"
 
 class ClientManagerThread {
 private:
     /* data */
 
 public:
-    ClientManagerThread(/* args */);
+    ClientManagerThread();
     ~ClientManagerThread();
 
-    void operator()(ClientSocket socket);
+    void operator()(ServerSocketForClient socket);
 };
 

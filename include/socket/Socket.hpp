@@ -1,33 +1,33 @@
 #pragma once
 
 #include <netinet/in.h>
+#include <string>
 
-// Forward declaration di ClientSocket
-class ClientSocket;
-
-class Socket
-{
+class Socket {
 private:
     int sockfd = -1;
-    struct sockaddr_in serverAddres;
     int serverPort;
-    in_addr_t addr;
-    bool error = false;
+    struct sockaddr_in serverAddress;
+    in_addr_t ipAddr;
 
 public:
-/*
-    inet_addr("127.0.0.1")
-*/
     Socket();
-    Socket(int port, in_addr_t addr);
+    Socket(int port, in_addr_t ip);
     ~Socket();
 
-    bool create();
-    bool listenSocket(int backlog);
-    ClientSocket& acceptConnection();  //deve ritornare un oggetto Socket
-    bool sendString(std::string msg);
+    //virtual bool createSocket() = 0;
     void closeSocket();
+    bool sendString(std::string msg);
+
     int getDescriptor();
-    bool getErrStatus();
-    void setErrStatus(bool status);
+    void setDescriptor(int fd);
+
+    int getServerPort();
+    void setServerPort(int port);
+
+    struct sockaddr_in getServerAddress();
+    void setServerAddress(struct sockaddr_in serverAddress);
+
+    in_addr_t getIpAddr();
+    void setIpAddr(in_addr_t ip);
 };

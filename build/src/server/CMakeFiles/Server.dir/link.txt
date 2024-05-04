@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libServer.a CMakeFiles/Server.dir/Server.cpp.o CMakeFiles/Server.dir/ClientManagerThread.cpp.o CMakeFiles/Server.dir/CommandManager.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libServer.a

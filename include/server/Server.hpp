@@ -1,22 +1,24 @@
 #pragma once
 
 #include <vector>
+#include <thread>
 #include <netinet/in.h>
 #include "HostInterface.hpp"
-#include "ClientSocket.hpp"
+#include "socket/ServerSocket.hpp"
+#include "socket/ServerSocketForClient.hpp"
 
-class Server : public HostInterface {
+class Server : public HostInterface<ServerSocket> {
 private:
-    int serverPort = 8080;
     int serverBacklog = 10;                   // Il numero massimo di connessioni in attesa di essere accettate
-    Socket socket;
 
-    std::vector<ClientSocket> clientSocketList;
+    std::vector<ServerSocketForClient> clientSocketList;
     std::vector<std::thread> clientThreadList;
 
 public:
-    Server(/* args */);
+    Server();
+    Server(int port);
     ~Server();
+    
     bool setup() override;
     void run() override;
 };
